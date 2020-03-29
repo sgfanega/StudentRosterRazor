@@ -25,9 +25,9 @@ namespace StudentRosterRazor.Pages.StudentRoster
             Students = await _db.Student.ToListAsync();
         }
 
-        public async Task<IActionResult> OnPostDelete(int studentID)
+        public async Task<IActionResult> OnPostDelete(int ID)
         {
-            var Student = await _db.Student.FindAsync(studentID);
+            var Student = await _db.Student.FindAsync(ID);
 
             if (Student == null)
             {
