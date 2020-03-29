@@ -1,0 +1,102 @@
+﻿@page
+@model StudentRosterRazor.Pages.StudentRoster.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<br />
+<h2 class="text-info">Edit Student</h2>
+<br />
+
+<div class="border container" style="padding: 30px;">
+    <form method="post">
+        <input type="hidden" asp-for="Student.ID" />
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <span class="col-3">
+                <label asp-for="Student.StudentID">Student ID</label>
+            </span>
+            <span class="col-6">
+                <input asp-for="Student.StudentID" class="form-control" />
+            </span>
+            <span asp-validation-for="Student.StudentID" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <span class="col-3">
+                <label asp-for="Student.FirstName">First Name</label>
+            </span>
+            <span class="col-6">
+                <input asp-for="Student.FirstName" class="form-control" />
+            </span>
+            <span asp-validation-for="Student.FirstName" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <span class="col-3">
+                <label asp-for="Student.MiddleName">Middle Name</label>
+            </span>
+            <span class="col-6">
+                <input asp-for="Student.MiddleName" class="form-control" />
+            </span>
+            <span asp-validation-for="Student.MiddleName" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <span class="col-3">
+                <label asp-for="Student.LastName">Last Name</label>
+            </span>
+            <span class="col-6">
+                <input asp-for="Student.LastName" class="form-control" />
+            </span>
+            <span asp-validation-for="Student.LastName" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <span class="col-3">
+                <label asp-for="Student.Grade"></label>
+            </span>
+            <span class="col-6">
+                <select asp-for="Student.Grade" class="form-control">
+                    <option></option>
+                    <option>12</option>
+                    <option>11</option>
+                    <option>10</option>
+                    <option>9</option>
+                    <option>8</option>
+                    <option>7</option>
+                    <option>6</option>
+                    <option>5</option>
+                    <option>4</option>
+                    <option>3</option>
+                    <option>2</option>
+                    <option>1</option>
+                </select>
+            </span>
+            <span asp-validation-for="Student.Grade" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <span class="col-3">
+                <label asp-for="Student.Gender"></label>
+            </span>
+            <span class="col-6">
+                <select asp-for="Student.Gender" class="form-control">
+                    <option></option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Prefer Not to Answer</option>
+                </select>
+            </span>
+            <span asp-validation-for="Student.Gender" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <span class="col-3 offset-3">
+                <input type="submit" value="Update" class="btn btn-primary form-control" />
+            </span>
+            <span class="col-3">
+                <a asp-page="Index" class="btn btn-success form-control">Back to List</a>
+            </span>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+
